@@ -15,7 +15,7 @@ app.set("view engine", "ejs");
 
 //Homepage
 app.get("/", (req, res) => {
-  res.render("index", res.json({ Members }));
+  res.render("index");
 });
 //app.get("/", (req, res) => {
 //res.sendFile(path.join(__dirname, "public", "index.html"));

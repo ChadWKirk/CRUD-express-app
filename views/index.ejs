@@ -19,8 +19,9 @@
       <button type="submit">Submit</button>
     </form>
     <ul>
-      <li><%=Members%></li>
-      <li></li>
+      <% Members.forEach((member) => { %>
+        <li><%= member.name %> &lt;<%= member.email %>&gt;</li>
+      <% }) %>
     </ul>
   </body>
 </html>

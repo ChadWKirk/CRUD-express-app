@@ -21,7 +21,7 @@
     <ul>
       <% Members.forEach((member) => { %>
       <li><%= "Name: " + member.name + " Email: " + member.email %></li>
-      <form action="/members" method="POST">
+      <form action="/delete/members/<%= member.name %>" method="POST">
         <button>Delete Member</button>
       </form>
 

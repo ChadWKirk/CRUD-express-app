@@ -28,8 +28,13 @@ app.post("/members", (req, res) => {
 });
 
 //Delete
-app.delete("/members", (req, res) => {
-  console.log("testing");
+app.post("/delete/members/:name", (req, res) => {
+  console.log("delete received");
+  console.log(req.params.name);
+
+  Members.filter((member) => member.name !== req.params.name);
+
+  res.redirect("/");
 });
 
 //Update

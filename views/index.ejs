@@ -19,7 +19,13 @@
       <button type="submit">Submit</button>
     </form>
     <ul>
-      
+      <% Members.forEach((member) => { %>
+      <li><%= "Name: " + member.name + " Email: " + member.email %></li>
+      <form action="/members" method="POST">
+        <button>Delete Member</button>
+      </form>
+
+      <% }); %>
     </ul>
   </body>
 </html>

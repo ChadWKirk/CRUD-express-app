@@ -4,7 +4,7 @@ const ejs = require("ejs");
 
 const PORT = process.env.PORT || 5000;
 
-const Members = [
+var Members = [
   { name: "Charlie", email: "Charlie@gmail.com" },
   { name: "William", email: "William@gmail.com" },
 ];
@@ -29,14 +29,18 @@ app.post("/members", (req, res) => {
 
 //Delete
 app.post("/delete/members/:name", (req, res) => {
-  console.log("delete received");
-  console.log(req.params.name);
-
-  Members.filter((member) => member.name !== req.params.name);
-
+  Members = Members.filter((member) => member.name !== req.params.name);
   res.redirect("/");
 });
 
 //Update
+app.post("/update/members/:name", (req, res) => {
+  Members = Members.filter((member) => member.name !== req.params.name);
+  res.redirect("/");
+});
+
+app.get("/update/members", (req, res) => {
+  res.render("update");
+});
 
 app.listen(PORT);

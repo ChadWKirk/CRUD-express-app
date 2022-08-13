@@ -7,10 +7,8 @@
     <title>Document</title>
   </head>
   <body>
-    <h1>Express Tester</h1>
-    <h3>
-      Submit a person to the table using the input fields and submit button.
-    </h3>
+    <h1>Update Member</h1>
+    <h3>Update Member</h3>
     <form action="/members" method="POST">
       <label for="name">Name</label>
       <input type="text" id="name" name="name" />
@@ -18,16 +16,5 @@
       <input type="text" id="email" name="email" />
       <button type="submit">Submit</button>
     </form>
-    <ul>
-      <% Members.forEach((member) => { %>
-      <li><%= "Name: " + member.name + " Email: " + member.email %></li>
-      <form action="/delete/members/<%= member.name %>" method="POST">
-        <button>Delete Member</button>
-      </form>
-      <form action="/update/members/<%= member.name %>" method="POST">
-        <button>Update Member</button>
-      </form>
-      <% }); %>
-    </ul>
   </body>
 </html>
